@@ -1,6 +1,6 @@
 ﻿# The Maze
 
-A simple C# console app for solving mazes.
+A simple console app written in C# for solving mazes.
 
   - Run the app
   - Provide a Maze
