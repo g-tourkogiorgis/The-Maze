@@ -83,6 +83,8 @@
     <Compile Include="Bootstrapping\ExecutorsSubsystemTests.cs" />
     <Compile Include="Executors\MazeCoordinatorExecutorTests.cs" />
     <Compile Include="Executors\MazeDimensionPropertiesExtractorExecutorTests.cs" />
+    <Compile Include="Executors\MazeTransformerExecutorTests.cs" />
+    <Compile Include="Functionals\FunctionalTests.cs" />
     <Compile Include="Models\MazeDimensionPropertiesTests.cs" />
     <Compile Include="Models\SolutionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,7 +100,14 @@
       <Name>Maze</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Mazes\maze-no-solution.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Mazes\maze.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>

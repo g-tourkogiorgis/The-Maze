@@ -5,7 +5,6 @@ using Maze.Models;
 
 namespace Maze.Executors.MazeTransformerExecutor
 {
-    // TODO unit test
     public class MazeTransformerExecutor : ExecutorBase<string, MazeModel>, IMazeTransformerExecutor
     {
         private readonly IMazeDimensionPropertiesExtractorExecutor _mazeDimensionPropertiesExtractor;
@@ -19,12 +18,15 @@ namespace Maze.Executors.MazeTransformerExecutor
 
         protected override MazeModel OnExecute(string mazeStr)
         {
+            // Get maze dimension properties.
             var dimensions = _mazeDimensionPropertiesExtractor.Execute(mazeStr);
 
             var maze = new MazeModel() {MazeDimensionProperties = dimensions};
 
+            // Initialize a 2D matrix to represent the maze.
             var matrix = new Point[dimensions.RowsLength, dimensions.ColumnsLength];
 
+            // Populate matrix values.
             for (int x = 0; x < dimensions.RowsLength; x++)
             {
                 var row = maze.MazeDimensionProperties.Rows[x];

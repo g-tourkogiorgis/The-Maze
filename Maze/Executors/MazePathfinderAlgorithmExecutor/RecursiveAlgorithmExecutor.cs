@@ -5,13 +5,12 @@ using Maze.Models;
 
 namespace Maze.Executors.MazePathfinderAlgorithmExecutor
 {
-    // TODO unit test
     public class RecursiveAlgorithmExecutor : ExecutorBase<MazeModel, Solution>, IMazePathfinderAlgorithmExecutor
     {
-        private MazeModel _maze;
-        private bool[,] _visited;
-        private bool[,] _correctPath;
-        private Stack<Point> _solutionPath;
+        private MazeModel _maze; // The maze to solve.
+        private bool[,] _visited; // A matrix containing boolean values indiacating if a point is visited.
+        private bool[,] _correctPath; // A matrix containing boolean values indiacating the correct path as true values.
+        private Stack<Point> _solutionPath; // A stack to hold the solution path.
 
         protected override Solution OnExecute(MazeModel maze)
         {
