@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Maze.Core;
 using Maze.Models;
@@ -38,8 +39,8 @@ namespace Maze.Executors.MazePathfinderAlgorithmExecutor
             
             _visited[x, y] = true;
 
-            if (x != 0) // If not on left edge.
-                if (RecursiveSolve(x - 1, y)) // Move West.
+            if (x != 0) // If not on top.
+                if (RecursiveSolve(x - 1, y)) // Move North.
                 { 
                     _solutionPath.Push(new Point()
                     {
@@ -49,8 +50,8 @@ namespace Maze.Executors.MazePathfinderAlgorithmExecutor
                     _correctPath[x, y] = true;
                     return true;
                 }
-            if (x != _maze.MazeDimensionProperties.RowsLength - 1) // If not on right edge.
-                if (RecursiveSolve(x + 1, y)) // Move East
+            if (x != _maze.MazeDimensionProperties.RowsLength - 1) // If not on bottom.
+                if (RecursiveSolve(x + 1, y)) // Move South.
                 { 
                     _correctPath[x, y] = true;
                     _solutionPath.Push(new Point()
@@ -60,8 +61,8 @@ namespace Maze.Executors.MazePathfinderAlgorithmExecutor
                     });
                     return true;
                 }
-            if (y != 0)  // If not on top edge
-                if (RecursiveSolve(x, y - 1)) // Move South
+            if (y != 0)  // If not on left edge.
+                if (RecursiveSolve(x, y - 1)) // Move West.
                 { 
                     _correctPath[x, y] = true;
                     _solutionPath.Push(new Point()
@@ -71,8 +72,8 @@ namespace Maze.Executors.MazePathfinderAlgorithmExecutor
                     });
                     return true;
                 }
-            if (y != _maze.MazeDimensionProperties.ColumnsLength - 1) // If not on bottom edge
-                if (RecursiveSolve(x, y + 1)) // Move North
+            if (y != _maze.MazeDimensionProperties.ColumnsLength - 1) // If not on right edge.
+                if (RecursiveSolve(x, y + 1)) // Move East.
                 {
                     _correctPath[x, y] = true;
                     _solutionPath.Push(new Point()
@@ -83,7 +84,6 @@ namespace Maze.Executors.MazePathfinderAlgorithmExecutor
                     return true;
                 }
 
-            if (_solutionPath.Any()) _solutionPath.Pop();
             _visited[x, y] = false;
             return false;
         }
