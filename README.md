@@ -45,7 +45,7 @@ Dillinger uses a number of open source projects to work properly:
 
 * [log4net](https://www.nuget.org/packages/log4net/) - for logging
 * [Unity](https://www.nuget.org/packages/Unity/) - for DI
-* [Moq](https://www.nuget.org/packages/Moq/) - for unit tests mocking
+* [Moq](https://www.nuget.org/packages/Moq/) - for mocking
 * [Nunit 3](https://www.nuget.org/packages/NUnit/) - for unit testing
 * [Nunit 3 Test Adapter](https://marketplace.visualstudio.com/items?itemName=NUnitDevelopers.NUnit3TestAdapter) for running unit tests (Visual studio extension)
 
