@@ -41,7 +41,7 @@ or the same Maze as raw string input: `S___X.__XX_.__X__._X__G.___X_`
 
 ### Libraries used
 
-Dillinger uses a number of open source projects to work properly:
+The MAze uses a number of open source projects to work properly:
 
 * [log4net](https://www.nuget.org/packages/log4net/) - for logging
 * [Unity](https://www.nuget.org/packages/Unity/) - for DI
